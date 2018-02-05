@@ -1,0 +1,75 @@
+body{
+	max-width: 100%;
+	background-size: cover;
+	height: auto;
+	background-image: url("../img/fondo.jpg");
+	background-repeat: no-repeat;
+}
+
+.center{
+	text-align:center;
+	margin-bottom: 25px;
+}
+
+#twits{
+	margin-bottom: 25px;
+}
+
+*, ::after, ::before{
+	justify-content: center;
+}
+
+.mensajes_new{
+	background-color: white;
+	width: 100%;
+	height: auto;
+	justify-content: center;
+
+}
+
+.imagen{
+	border-radius: 50%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 120px;
+	height:75px;
+}
+.texto{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.text-dark{
+   color: black!important;
+}
+
+.errores{
+    -webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    -moz-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    -o-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    background: red;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    color: #fff;
+    display: none;
+    font-size: 14px;
+    margin-top: -80px;
+    margin-left: 340px;
+    padding: 10px;
+    position: absolute;
+}
+
+#registro{
+    background: white;
+    opacity: 0.9;
+    width: 100%;
+    height: auto;
+}
+
+h2{
+    color: grey;
+}
+
+#imagen_perfil{
+    width: 200px;
+    height200px;
+}
