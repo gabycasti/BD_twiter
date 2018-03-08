@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>formulario</title>
+	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> 
+	<link rel = "stylesheet" href = "https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/2d8d0b9d/bpp/bpp.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/registro.css">
+</head>
+<body>
+
+<!--Encabezado -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+  <a class="navbar-brand text-center" href="#">TWITER</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+<!--Fin Encabezado-->
+
+<<div class="container">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form role="form">
+			<h2>Ingrese sus Datos</small></h2>
+			<hr class="colorgraph">
+			<div class="form-group">
+				<input type="text" name="display_name" id="nombre" class="form-control input-lg" placeholder="Nombre y Apellido" tabindex="3">
+			</div>
+			<div id="mensaje_nombre" style="display: none">
+				<span class="mensaje_error">Ingrese Nombre y Apellido</span>
+			</div>
+			<div class="form-group">
+				<input type="text" name="display_name" id="nick" class="form-control input-lg" placeholder="Nick" tabindex="3">
+			</div>
+			<div id="mensaje_nick" style="display: none">
+				<span class="mensaje_error">Ingrese Nick</span>
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" id="correo" class="form-control input-lg" placeholder="Email" tabindex="4">
+			</div>
+			<div id="mensaje_correo" style="display: none">
+				<span class="mensaje_error">Ingrese Email o ingrese un correo válido</span>
+			</div>
+			<div class="form-group">
+					<input type="password" name="password" id="clave" class="form-control input-lg" placeholder="Contraseña" tabindex="5">
+			</div>
+			<div id="mensaje_clave" style="display: none">
+				<span class="mensaje_error">Ingrese Contraseña</span>
+			</div>
+			
+			<div class="row">
+	          <div class="col-xs-12 col-md-12 divs texto_img">
+	            <h2>Subir imagen de Perfil</h2>
+	          </div>
+      
+	            <div class="form-group">
+	              <label for="recipient-name" class="control-label"></label>
+	              <input  type="file"  id="foto">
+	            </div>
+	         </div>
+			
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6">
+                 <button type="button" id="btn-registro" class="btn btn-primary">Registrarse</button>
+                </div>
+			</div>
+		</form>
+	</div>
+  </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- scripts a js-->
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="https://use.fontawesome.com/2dd3618c98.js"></script>
+<script src="assets/js/db.js"></script>	
+<script src="assets/js/register.js"></script>
+<script src="assets/js/valid_register.js"></script>
+</body>
+</html>

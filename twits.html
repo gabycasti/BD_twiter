@@ -3,15 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Twiter con Base de Datos</title>
+	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> 
-	<link rel = "stylesheet" href = "https : //cdn.rawgit.com/arafkarim/BootstrapPlusPlus/2d8d0b9d/bpp/bpp.min.css">
+    <link rel = "stylesheet" href = "https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/2d8d0b9d/bpp/bpp.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
 <!--Encabezado -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary center">
-    <a class="navbar-brand" href="#">Twiter</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand " href="#">TWITER</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" id="nick" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+       <a class="nav-link" href="#">Cerrar Sesión</a>
+    </form>
+  </div>
 </nav>
 <!--Fin Encabezado-->
 
@@ -19,21 +35,24 @@
 <div id="twits">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-6">
-				<div class="card bg-primary text-white">
-				  <div class="card-body">
-				    <h4 class="card-title">The title</h4>
-				    <p class="card-text">...</p>
-				  </div>
-				</div>
-			</div>
+            <div class="col-lg-4 mensajes_new">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img id="foto_perfil" src="" class="img-thumbnail imagen_new" alt="...">
+                    </div>
+                    <div class="col-lg-6 texto">
+                        <h4>Nombre Usuario</h4>
+                        <h6 id="nombre_usuario"></h6>
+                    </div>
+                </div>
+            </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-8">
 				<div class="card">
 				  <div class="card-body">
 				    <h4 class="card-title">Mensajes</h4>
 				    <div class="form-group">
-						  <textarea class="form-control" rows="3" placeholder="Escribe tu Mensaje"></textarea>
+						  <textarea id="txt_mensaje" class="form-control" rows="3" placeholder="Escribe tu Mensaje"></textarea>
 						</div>
 				    <a href="#" id="enviar_mensaje" class="btn btn-primary">Enviar Mensaje</a>
 				  </div>
@@ -44,23 +63,7 @@
 </div>
 
 <!--Mostrar twits-->
-<div id="mensajes">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 mensajes_new">
-				<div class="row">
-					<div class="col-lg-1">
-						<img src="assets/img/perfil.jpg" class="img-thumbnail imagen" alt="...">
-					</div>
-					<div class="col-lg-11 texto">
-						<h6>Nombre Usuario</h6>
-						<p id="texto_mensaje"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, soluta nesciunt quas praesentium minima provident in debitis adipisci, enim deserunt ad expedita, blanditiis vel, asperiores! Illum accusamus voluptas, distinctio quos.</span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<div id="mensajes"></div>
 
 
 
@@ -72,6 +75,9 @@
 <!-- scripts a js-->
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script src="https://use.fontawesome.com/2dd3618c98.js"></script>
-<script src= assets/js/app.js></script>	
+<script src= assets/js/db.js></script> 
+<script src= assets/js/app.js></script> 
+<script src= assets/js/profile.js></script> 
+
 </body>
 </html>

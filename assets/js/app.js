@@ -1,85 +1,59 @@
-<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAKixYYlq9PAFw0sljESzo6cZitRaTcRrI",
-    authDomain: "twiter-4b893.firebaseapp.com",
-    databaseURL: "https://twiter-4b893.firebaseio.com",
-    projectId: "twiter-4b893",
-    storageBucket: "",
-    messagingSenderId: "751461675240"
-  };
-
-firebase.initializeApp(config);
-var db = firebase.database();
-
-
-
-var expresion= /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-
+//Archivo de twits para guardarlo en base de datos y mostrarlo en pantalla
 $(document).ready(function(){
 
-	//$('#enviar_mensaje').click(function(){
-	//	var mensaje = $('#texto_mensaje').val();
-	//	mensajes(mensaje);
-	//})
+$('#enviar_mensaje').click(function(){
 
-    /* El metodo .test nos valida si se cumple o no la expresión regular
-    * En este caso lo esta negando es decir si no se cumple
-    * Me retorna un valor booleano verdadero o false      
-    */
-     $('#enviar_for').click(function(){
-        var nombre = $('#nombre').val();
-        var email = $('#email').val();
-        var clave = $('#clave').val();
-        var pais = $('#pais').val();
+   mensajes(twits)
 
-
-        if(nombre == ''){
-           $('#mensaje_nombre').fadeIn();
-           return false;
-        }else{
-            $('#mensaje_nombre').fadeOut();
-            if(email == '' || !expresion.test(email)){
-              $('#mensaje_correo' ).fadeIn();
-               return false;
-        }else{
-            $('#mensaje_correo').fadeOut();
-            if(clave == ''){
-                $("#mensaje_clave").fadeIn();
-                 return false;
-        }else{
-            $('#mensaje_clave').fadeOut();
-            if(pais == ''){
-               $("#mensaje_pais").fadeIn();
-                return false;
-        }else{
-            $('#mensaje_pais').fadeOut();
-            if (!($('#check').prop('checked'))){
-               $("#mensaje_condi").fadeIn();
-                return false;
-         }
-        }
-       }
-      }
-    } 
-       document.location.replace('twits.html')
-   });
-
+  });
 
 });
 
-
-
 function mensajes(twits) {
-  var mensaje_twit = $('#texto_mensaje').val();
 
- $('#mensajes').append('<div class="row character">' +
-    '<div class= "col-md-1 text-center">'+
-    '<img src="img/recipes/640x480/' + imagen_perfil + '.jpg">'+
-    '</div>' +
-    '<div class= "col-lg-11 mensajes_new">'+
-    '<h3>' + mensaje_twit + '</h3>' +
-    '</div>' +
-    '</div>')
-}
+var d = new Date();
+var fecha = d.getDay()+ '' + d.getMonth()+ '' + d.getFullYear() + '' + d.getHours() + '' + d.getMinutes() + '' + d.getSeconds();
+var hora = d.getDay()+ '/' + d.getMonth()+ '/' + d.getFullYear() + '/ ' + d.getHours() + ':' + d.getMinutes()
+  
+// Rescatar información del formulario crear perfil
+// haciendo referencia a el campo usuarios de la base de datos
+    var twits = db.ref('twits');
+    var mensaje_twit = $('#txt_mensaje').val();
+ 
+  
+// Creo un objeto para almacenar los datos de un usuario
+  // Creo un objeto para almacenar los datos de un usuario
+      var twit = new Object();
+      twit.nick=nick;
+      twit.nombre=nombre;
+      twit.mensaje= mensaje_twit;
+      twit.foto= foto;
+      twit.hora = hora;
+//Llamo al campo referencia de usuarios de la base de datos que es nick 
+// Guardo con set el objeto usuario con todos los datos de los usuarios
+//llamo al campo referencia de usuarios de la base de datos que es nick 
+// guardo con set el objeto usuario con todos los datos de los usuarios
+    //  usuarios.child(nick).set(usuario);
+     console.log(twit);
+
+      twits.child(nick + fecha).set(twit);
+      sessionStorage['usuarioLogueado'] = nick;
+
+
+ $('#mensajes').append('<div class="container margen">'+
+        '<div class="row">'+
+            '<div class="col-lg-12 mensajes_new">'+
+                '<div class="row">'+
+                    '<div class="col-lg-1">'+
+                        '<img src="'+ foto +'" class="img-thumbnail imagen" alt="...">'+
+                    '</div>'+
+                    '<div class="col-lg-11 texto">'+
+                        '<h6>'+ nombre +'</h6>'+
+                        '<p id="texto_mensaje"><span>'+ mensaje_twit +'</span></p>'+
+                        '<h6>'+ hora +'</h6>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+    '</div>');
+};
