@@ -7,6 +7,8 @@ $('#enviar_mensaje').click(function(){
 
   });
 
+
+
 });
 
 function mensajes(twits) {
@@ -42,7 +44,7 @@ var hora = d.getDay()+ '/' + d.getMonth()+ '/' + d.getFullYear() + '/ ' + d.getH
 
  $('#mensajes').append('<div class="container margen">'+
         '<div class="row">'+
-            '<div class="col-lg-12 mensajes_new">'+
+            '<div class="col-lg-12 mensajes_twits">'+
                 '<div class="row">'+
                     '<div class="col-lg-1">'+
                         '<img src="'+ foto +'" class="img-thumbnail imagen" alt="...">'+

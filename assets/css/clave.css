@@ -1,4 +1,3 @@
-
 .container{
  background: rgba(0,0, 0, 0.5);
  width: 45%;
@@ -6,7 +5,7 @@
  color:white;
 }
 
-h2{
+p{
     font-size: 24px;
     color: white !important;
 }
@@ -25,4 +24,62 @@ h2{
   background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
   background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+@media (min-width:360px) and (max-width:640px){
+ .container{    
+width: 80%;
+  }
+
+p{
+    font-size: 16px;
+    color: white !important;
+}
+
+#btn-login{
+  text-align: center;
+  width: 100px;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+ #btn-registro{
+  text-align: center;
+  width: 100px;
+  font-size: 10px;
+ }
+
+ .center{
+  text-align: center;
+  
+ }
+
+}
+
+@media (min-width:641px) and (max-width:1024px){
+
+  p{
+    font-size: 16px;
+    color: white !important;
+    text-align: center;
+}
+ .container{    
+width: 80%;
+  }
+
+p{
+    font-size: 16px;
+    color: white !important;
+}
+
+#btn-login{
+  width: 100px;
+  font-size: 12px;
+}
+
+ #btn-registro{
+  width: 100px;
+  font-size: 12px;
+ }
+
 }
