@@ -8,16 +8,19 @@
     <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> 
     <link rel = "stylesheet" href = "https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/2d8d0b9d/bpp/bpp.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-      <link rel="stylesheet" href="assets/css/clave.css">
+    <link rel="stylesheet" href="assets/css/clave.css">
 </head>
 <body>
 
 <!--Encabezado -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand text-center" href="#">TWITER</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <ul class="navbar-nav ml-auto">
+   <li class="nav-item"><button id="portafolio" type="button" class="btn btn-secondary">Portafolio</button></li>
+  </ul>
 </nav>
 <!--Fin Encabezado-->
 
@@ -27,11 +30,13 @@
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
     <form role="form">
       <fieldset>
-        <p>Ingrese Usuario y Clave</p>
+        <p>Ingrese Correo y Clave</p>
         <hr class="colorgraph">
         <div class="form-group">
-                    <input type="email" name="email" id="correo" class="form-control input-lg" placeholder="Email">
+          <input type="email" name="email" id="correo" class="form-control input-lg" placeholder="Email">
+          <div class="mensaje_error"  id="usuario_incorrecto"></div>
         </div>
+        <div id="mensaje_email"></div>
         <div class="form-group">
                     <input type="password" name="password" id="clave" class="form-control input-lg" placeholder="Clave">
         </div>
@@ -45,10 +50,15 @@
              <button type="button" id="btn-registro" class="btn btn-primary">Registrarse</button>
           </div>
         </div>
+        <div class="row center">
+         <div class="col-xs-12 col-sm-12 col-md-12">
+             <div class="mensaje_error"  id="datos_error"></div>
+         </div>
+        </div>
       </fieldset>
     </form>
-  </div>
-</div>
+   </div>
+ </div>
 </div>
 
 
@@ -60,6 +70,5 @@
 <script src="https://use.fontawesome.com/2dd3618c98.js"></script>
 <script src="assets/js/db.js"></script> 
 <script src="assets/js/login.js"></script>
-<script src="assets/js/clave.js"></script>
 </body>
 </html>

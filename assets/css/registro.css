@@ -16,8 +16,15 @@ h2{
 }
 
 .mensaje_error{
-  color:#FF8C00;
-  font-size: 14px;
+  margin-top:-40px;
+  color:yellow;
+  font-size: 12px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+#mensaje_nombre,#mensaje_nick,#mensaje_correo,#mensaje_clave{
+  margin-top:-20px;
 }
 
 .colorgraph {

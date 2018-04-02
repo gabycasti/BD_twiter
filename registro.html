@@ -33,6 +33,7 @@
 			</div>
 			<div id="mensaje_nombre" style="display: none">
 				<span class="mensaje_error">Ingrese Nombre y Apellido</span>
+
 			</div>
 			<div class="form-group">
 				<input type="text" name="display_name" id="nick" class="form-control input-lg" placeholder="Nick" tabindex="3">
@@ -55,12 +56,15 @@
 			
 			<div class="row">
 	          <div class="col-xs-12 col-md-12 divs texto_img">
-	            <h2>Subir imagen de Perfil</h2>
+	            <h6>Subir imagen de Perfil</h6>
 	          </div>
       
 	            <div class="form-group">
 	              <label for="recipient-name" class="control-label"></label>
 	              <input  type="file"  id="foto">
+	              <div id="mensaje_foto" style="display: none">
+	            		<span class="mensaje_error">Seleccione su Foto</span>
+			        </div>
 	            </div>
 	         </div>
 			
@@ -86,6 +90,6 @@
 <script src="https://use.fontawesome.com/2dd3618c98.js"></script>
 <script src="assets/js/db.js"></script>	
 <script src="assets/js/register.js"></script>
-<script src="assets/js/valid_register.js"></script>
+
 </body>
 </html>

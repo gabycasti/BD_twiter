@@ -41,6 +41,22 @@ body{
 
 }
 
+.mensaje_error{
+  margin-top:-25px;
+  color:yellow;
+  font-size: 12px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+#usuario_incorrecto{
+  margin-top:5px;
+  color:yellow;
+  font-size: 12px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
 .margen{
     padding-bottom: 20px;
 }
@@ -106,6 +122,13 @@ h2{
     /*height200px;*/
 }
 
+.form-control {
+  color:#fff !important;
+}
+
+#txt_mensaje{
+  color:#000 !important;
+}
 
 /*MEDIA QUERY*/
 @media (min-width:360px) and (max-width:640px){
