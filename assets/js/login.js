@@ -54,7 +54,7 @@ $("#btn-registro").click(function(){
   });
 
 $("#portafolio").click(function(){
-  location.replace("https://gabycasti.github.io/portafolio/");
+  document.location.replace("https://gabycasti.github.io/portafolio/");
 })
 
 });
