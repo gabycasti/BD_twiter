@@ -121,6 +121,11 @@ height: 160px;
    color: black!important;
 }
 
+.card-title{
+color: white !important;
+};
+
+
 .errores{
     -webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);
     -moz-box-shadow:0 0 10px rgba(0,0,0,0.3);
@@ -177,9 +182,7 @@ body{
     height: 90%;
 } 
 
-.card-title{
-color: white !important;
-}
+
 .imagen{
     display: none;
 }

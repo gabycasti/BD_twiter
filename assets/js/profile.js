@@ -3,6 +3,7 @@ var nombre = '';
 var nick = '';
 $(document).ready(function(){
    cargaDatos();
+   
 
    
 // realizamos la autenticación anónima (debe estar activada en la consola de Firebase)
@@ -17,8 +18,6 @@ $(document).ready(function(){
 
 
 function cargaDatos(){
-       //console.log("Usuario: "+sessionStorage['usuarioLogueado']) 
-
         var usuarios = db.ref('usuarios');
         usuarios.on('value',function(ss){
           var usuario = ss.val();
@@ -40,3 +39,4 @@ function cargaDatos(){
                 nick = usuario[usr[indice]].nick;
           })
     }
+

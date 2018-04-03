@@ -1,10 +1,11 @@
 //Archivo de twits para guardarlo en base de datos y mostrarlo en pantalla
 $(document).ready(function(){
+  cargartwits();
+
+
 
 $('#enviar_mensaje').click(function(){
-
    mensajes(twits)
-
   });
 
 
@@ -40,22 +41,35 @@ var hora = d.getDay()+ '/' + d.getMonth()+ '/' + d.getFullYear() + '/ ' + d.getH
 
       twits.child(nick + fecha).set(twit);
       sessionStorage['usuarioLogueado'] = nick;
+      cargartwits();
+        
+};
 
-
- $('#mensajes').append('<div class="container margen">'+
+function cargartwits(){
+var twits = db.ref('twits').orderByChild('hora');;
+console.log("entre");
+        twits.on('value',function(ss){
+            var twit = ss.val();
+            tw = Object.keys(twit); //ASOCIAR LOS DATOS DEL OBJETO A UNA VARIABLE
+            $("#mensajes").html("");
+            for(i=(tw.length-1); i>=0; i--){
+              console.log(twit[tw[i]].nick +' '+twit[tw[i]].mensaje);
+        $('#mensajes').append('<div class="container margen">'+
         '<div class="row">'+
             '<div class="col-lg-12 mensajes_twits">'+
                 '<div class="row">'+
                     '<div class="col-lg-1">'+
-                        '<img src="'+ foto +'" class="img-thumbnail imagen" alt="...">'+
+                        '<img src="'+ twit[tw[i]].foto +'" class="img-thumbnail imagen" alt="...">'+
                     '</div>'+
                     '<div class="col-lg-11 texto">'+
-                        '<h6>'+ nombre +'</h6>'+
-                        '<p id="texto_mensaje"><span>'+ mensaje_twit +'</span></p>'+
-                        '<h6>'+ hora +'</h6>'+
+                        '<h6>'+ twit[tw[i]].nombre +'</h6>'+
+                        '<p id="texto_mensaje"><span>'+ twit[tw[i]].mensaje +'</span></p>'+
+                        '<h6>'+ twit[tw[i]].hora +'</h6>'+
                     '</div>'+
                 '</div>'+
             '</div>'+
         '</div>'+
     '</div>');
-};
+       };
+    }); 
+  };
