@@ -104,11 +104,18 @@ height: 160px;
 	width: 120px;
 	height:70px;
 }
+
+.texto_1,#nombre_usuario_1{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color:white;
+}
+
 .texto,#nombre_usuario{
-	margin-top: 30px;
 	margin-bottom: 10px;
   color:white;
 }
+
 
 .text-dark{
    color: black!important;
