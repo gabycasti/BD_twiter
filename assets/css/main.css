@@ -105,7 +105,7 @@ height: 160px;
 	height:70px;
 }
 
-.texto_1,#nombre_usuario_1{
+.texto_1,.nombre_usuario_1{
   margin-left: 20px;
   margin-bottom: 10px;
   color:white;
