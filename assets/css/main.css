@@ -177,6 +177,9 @@ body{
     height: 90%;
 } 
 
+.card-title{
+color: white !important;
+}
 .imagen{
     display: none;
 }
